@@ -8,8 +8,9 @@
     <title>Laravel Test App</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,7 +20,7 @@
   </head>
   <body>
     
-    <nav class="navbar navbar-inverse" role="navigation">
+    <!--nav class="navbar navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,27 +31,36 @@
           </button>
           <a class="navbar-brand" href="index.html">Веломастерская.Катай</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <!--div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="index.html">главная</a> </li>
                 <!--li><a href="">клиенты</a> </li>
                 <li><a href="">заказы</a> </li>
                 <li><a href="">прайс-лист</a> </li>
-                <li><a href="">статистика</a> </li-->
+                <li><a href="">статистика</a> </li>
             </ul>
-            <!--button class="btn btn-success navbar-btn navbar-right">НОВЫЙ ЗАКАЗ</button-->
+            <!--button class="btn btn-success navbar-btn navbar-right">НОВЫЙ ЗАКАЗ</button>
             <a class="btn btn-success navbar-btn navbar-right" href="add-order.html" role="button">НОВЫЙ ЗАКАЗ</a>
        
-        </div><!--/.navbar-collapse -->
+        </div><!--/.navbar-collapse >
+        
       </div>
-    </nav>  
-      
+    </nav-->  
+     <div class="container">      
+      <ol class="breadcrumb">
+          
+        <li>{!! link_to_route('test.index', 'testView')!!}</li>
+        <li>{!! link_to_route('test.topclient', 'topTestView')!!}</li>
+        <li>{!! link_to_route('test.create', 'testCreate')!!}</li>
+        </ol>
+    </div>
       
     @yield('content')
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!--script src="js/bootstrap.min.js"></script-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>
 </html>

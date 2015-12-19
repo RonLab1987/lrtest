@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Test;
+use Carbon\Carbon;
 
 class TestController extends Controller
 {
@@ -14,9 +16,23 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-       return view('test.index');
+    public function index(Test $testModel)
+    {       
+       $test = $testModel->getClient();
+      // dd($test);
+       return view('test.index',['test' =>$test, 'date' => Carbon::now() ]);
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function topClient(Test $testModel)
+    {       
+       $test = $testModel->getTopClient();
+       //dd($test);
+       return view('test.top',['test' =>$test, 'date' => Carbon::now() ]);
     }
 
     /**
@@ -26,7 +42,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        //
+        return view('test.create');
     }
 
     /**
@@ -35,9 +51,14 @@ class TestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Test $testModel, Request $request)
+    { //dd($request->all());
+      $testModel->createUser($request->all());
+      return redirect()->route('test.index');  
+        //$test = $testModel->getClient();
+      // dd($test);
+      // return view('test.index',['test' =>$test, 'date' => Carbon::now() ]);
+    
     }
 
     /**

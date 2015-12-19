@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', "TestController@index" );
+//Route::get('test', ['uses' =>  "TestController@index", 'as' => 'test.index'] );
+
+$router->resource('test','TestController');
+Route::get('test-top4', ['uses' =>  "TestController@topClient", 'as' => 'test.topclient'] );

@@ -4,7 +4,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>ПРИВЕТ МИР!</h1>
-            <p>view:: test.index</p>
+            <p>view:: test.top</p>
         </div>
     </div>
 
